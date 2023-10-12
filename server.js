@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 5000; //Line 3
+// const port = process.env.PORT || 5000;
 
 app.get("/api", (req, res) => {
-    res.json({ message: "Hola desde el servidor!" });
-  });
+    res.json({ "users": ["userOne", "userTwo"] })
+  })
   
-app.listen(port, () =>
-  console.log(`Servidor escuchando en el puerto: ${port}`));
+app.listen(5000, () => {
+  console.log("Server started on port 5000")
+})
